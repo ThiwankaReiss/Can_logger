@@ -6,12 +6,12 @@ This project captures my work building and refining an Arduino-based CAN bus sys
 
 <table>
   <tr>
-    <td align="center"><img src="img/BigCircuit1.jpeg" alt="Big circuit 1" width="380" /><br />BigCircuit1</td>
-    <td align="center"><img src="img/BigCircuit2.jpeg" alt="Big circuit 2" width="380" /><br />BigCircuit2</td>
+    <td align="center"><img src="img/BigCircuit1.jpeg" alt="Big circuit 1" width="380" /><br />
+    <td align="center"><img src="img/BigCircuit2.jpeg" alt="Big circuit 2" width="380" /><br />
   </tr>
   <tr>
-    <td align="center"><img src="img/smallCircuit1.jpeg" alt="Small circuit 1" width="380" /><br />smallCircuit1</td>
-    <td align="center"><img src="img/SmallCircuit2.jpeg" alt="Small circuit 2" width="380" /><br />SmallCircuit2</td>
+    <td align="center"><img src="img/smallCircuit1.jpeg" alt="Small circuit 1" width="380" /><br />
+    <td align="center"><img src="img/SmallCircuit2.jpeg" alt="Small circuit 2" width="380" /><br />
   </tr>
 </table>
 
@@ -20,8 +20,8 @@ This project captures my work building and refining an Arduino-based CAN bus sys
 The project followed a clear development path:
 
 - I first built a CAN logger to receive and store bus traffic through an MCP2515 module.
-- I then extended that setup with CAN filtering so only selected frames were handled.
-- Finally, I moved the design onto a standalone ATmega328P and programmed it using an Arduino as ISP.
+- I then extended that setup with CAN filtering where can data was transfered only from one can line to the next.
+- Finally, I moved the logger design onto a standalone ATmega328P and programmed it using an Arduino as ISP.
 
 Each stage built on the previous one and helped me move from basic communication testing to a more complete embedded hardware workflow.
 
@@ -33,7 +33,7 @@ The logger reads incoming CAN frames, captures a timestamp, and writes the messa
 
 CAN Logger  
 ↓  
-CAN Filtering  
+CAN Filter Device 
 ↓  
 Arduino as ISP Programming  
 ↓  
@@ -56,8 +56,3 @@ CanLogger/
 ├── img/
 └── README.md
 ```
-
-## Notes
-
-- Proteus and KiCad schematic files are not included yet.
-- The images above include all circuit photos currently available in the repository.
