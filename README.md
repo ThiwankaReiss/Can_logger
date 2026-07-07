@@ -6,12 +6,12 @@ This project captures my work building and refining an Arduino-based CAN bus sys
 
 <table>
   <tr>
-    <td align="center"><img src="img/BigCircuit1.jpeg" alt="Big circuit 1" width="380" /><br />
-    <td align="center"><img src="img/BigCircuit2.jpeg" alt="Big circuit 2" width="380" /><br />
+    <td align="center"><img src="img/BigCircuit1.jpeg" alt="Big circuit 1" width="380" /><br />Intial Circuit</td>
+    <td align="center"><img src="img/BigCircuit2.jpeg" alt="Big circuit 2" width="380" /><br />Intial Circuit</td>
   </tr>
   <tr>
-    <td align="center"><img src="img/smallCircuit1.jpeg" alt="Small circuit 1" width="380" /><br />
-    <td align="center"><img src="img/SmallCircuit2.jpeg" alt="Small circuit 2" width="380" /><br />
+    <td align="center"><img src="img/smallCircuit1.jpeg" alt="Small circuit 1" width="380" /><br />Final Circuit</td>
+    <td align="center"><img src="img/SmallCircuit2.jpeg" alt="Small circuit 2" width="380" /><br />Final Circuit</td>
   </tr>
 </table>
 
