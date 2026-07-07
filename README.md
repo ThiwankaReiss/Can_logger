@@ -1,10 +1,8 @@
-# Embedded CAN Bus Development
+# CAN Bus Development
 
-This repository documents an embedded CAN workflow built around the MCP2515 CAN controller and Arduino-compatible hardware. It starts with logging, moves into filtering, and finishes with programming a standalone ATmega328P using Arduino as ISP.
+This project captures my work building and refining an Arduino-based CAN bus system around the MCP2515 controller. It started as a data logger, grew into a filtered CAN interface, and later moved to a standalone ATmega328P setup programmed with Arduino as ISP.
 
 ## Circuit Gallery
-
-All circuit photos included in the repository are shown below.
 
 <table>
   <tr>
@@ -17,29 +15,21 @@ All circuit photos included in the repository are shown below.
   </tr>
 </table>
 
-## Project Flow
+## Overview
 
-The work is best presented as a progression of engineering tasks:
+The project followed a clear development path:
 
-1. **CAN Bus Data Logger**
+- I first built a CAN logger to receive and store bus traffic through an MCP2515 module.
+- I then extended that setup with CAN filtering so only selected frames were handled.
+- Finally, I moved the design onto a standalone ATmega328P and programmed it using an Arduino as ISP.
 
-- Built a CAN logger using an Arduino and MCP2515.
-- Learned CAN initialization, frame reception, serial output, SD card logging, and hardware interfacing.
-- The logger records CAN frames to CSV with a timestamp, CAN ID, DLC, and data bytes.
+Each stage built on the previous one and helped me move from basic communication testing to a more complete embedded hardware workflow.
 
-2. **CAN Bus Filter**
+## What the Logger Does
 
-- Reused the same core hardware and extended the software.
-- Implemented CAN acceptance filters and masks so only selected CAN IDs were processed.
-- Demonstrated controller configuration beyond basic message capture.
+The logger reads incoming CAN frames, captures a timestamp, and writes the message data to a CSV file on an SD card. The implementation also includes status handling through serial output and an LED indicator so the hardware state is easy to monitor during testing.
 
-3. **Arduino as ISP Programmer**
-
-- Used an Arduino as an ISP programmer to program standalone ATmega328P chips.
-- Built a CAN logger on the standalone ATmega328P instead of relying on an Arduino Uno board.
-- Showed the move from development-board prototyping to a more complete embedded hardware setup.
-
-## Workflow Summary
+## Development Flow
 
 CAN Logger  
 ↓  
@@ -49,25 +39,18 @@ Arduino as ISP Programming
 ↓  
 Standalone ATmega328P CAN Logger
 
-Each revision builds on the previous one:
+## Highlights
 
-- **Revision 1:** verify CAN communication and serial logging.
-- **Revision 2:** add filtering so only relevant CAN traffic is processed.
-- **Revision 3:** remove dependence on the Arduino Uno by programming a standalone ATmega328P.
+- MCP2515 CAN controller integration over SPI
+- CSV logging of CAN ID, DLC, and data bytes
+- CAN acceptance filtering and mask configuration
+- Arduino as ISP programming for standalone ATmega328P deployment
+- Serial debugging and hardware bring-up
 
-## Suggested CV Summary
-
-**Embedded CAN Bus Development**
-
-- Developed an Arduino-based CAN bus data logger using the MCP2515 CAN controller.
-- Implemented CAN hardware acceptance filters and masks to selectively process CAN frames.
-- Designed and programmed a standalone ATmega328P CAN logger using Arduino as ISP, eliminating dependence on a development board.
-- Configured SPI communication, validated CAN data flow, and used serial debugging for hardware bring-up.
-
-## Repository Structure
+## Repository Layout
 
 ```text
-CAN-logger/
+CanLogger/
 ├── CanFilter/
 ├── logger/
 ├── img/
@@ -77,4 +60,4 @@ CAN-logger/
 ## Notes
 
 - Proteus and KiCad schematic files are not included yet.
-- The circuit gallery at the top contains every image currently in `img/`.
+- The images above include all circuit photos currently available in the repository.
